@@ -6,11 +6,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #343239;
+    background-image: url('/assets/img/background.png');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #navBar {
-    background-color: #343239;
+    background-color: black;
     height: 3em;
     display: flex;
     justify-content: space-around;
@@ -19,16 +21,29 @@ body {
 
 #navBar a {
     text-decoration: none;
-    color: #00ccff;
+    color: snow;
     background-color: transparent;
     padding: .25em 1em;
     border-radius: .5em;
-    border: .1em solid #00ccff;
 
-    transition: box-shadow .3s, text-shadow .3s;
+    transition: box-shadow .3s, text-shadow .3s, border .3s;
+    position: relative;
+}
+
+#navBar a:hover:after {
+    content: attr(data-text);
+    display: block;
+    color: snow;
+    position: absolute;
+    top: 70%;
+
+    height: 25px;
+    width: 100%;
+    transform: scaleY(-1) perspective(2em) rotateX(-40deg) scale(1, .9);
+    filter: blur(.09em);
 }
 
 #navBar a:hover {
-    box-shadow: 0 0 15px #00ccff inset, 0 0 30px #00ccff, 0 0 45px #00ccff;
-    text-shadow: 0 0 .5em #00ccff;
+    /* box-shadow: 0 0 15px snow inset, 0 0 30px snow, 0 0 45px snow; */
+    text-shadow: 0 0 .5em snow, 0 0 .75em snow, 0 0 1em snow;
 }
