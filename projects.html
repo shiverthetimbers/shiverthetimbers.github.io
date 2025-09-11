@@ -9,22 +9,32 @@
 <body>
     <header>
         <nav id="navBar">
-            <a data-text="home" href="">home</a>
+            <a data-text="home" href="index.html">home</a>
             <a data-text="skills" href="">skills</a>
             <a data-text="projects" href="projects.html">projects</a>
             <a data-text="contact" href="">contact</a>
         </nav>
     </header>
     <main>
-        <h2>Basics</h2>
-        <div id="basicContainer">
+        <div id="basicsContainer">
+            <h2>Basics</h2>
             <div id="projectContainer">
-                <p>"write a blurb here about doing this project. Concurrent validation rather than waiting until the 'submit' event to tell the user they missed something.</p>
-                <a href="https://shiverthetimbers.github.io/form-validation" target="_blank">Form Validation</a>
+                <h3>Form Validation</h3>
+                <p>I paused briefly while studying some JavaScript basics to complete a thought I had. The textbook made a point about user-friendliness for forms. It was something about not resetting input values if the field was invalid at the 'submit' event. Of course, that would be annoying. This got me thinking. What about the forms I have interacted with stands out or makes the experience more user-friendly?</p>
+                <p>We have all submitted thousands of these things, I'm sure - billing information, shipping addresses, contact info, company review questionnaires, etc. They don't need to be complex or flashy. The most basic but effective feature I could imagine/recall was concurrent validation. Resetting invalid input values on 'submit' would be a mistake, but why wait for the submit event at all?</p>
+                <p>Why don't we check at every input event rather than the one submit event? If the input does not meet the field requirements, the user knows immediately. And, even better, they don't need to hold their breath or cross their fingers when they do finally click submit. The field indicates that the format or character requirements have been met before submitting.</p>
+                <a href="https://shiverthetimbers.github.io/form-validation" target="_blank">Check it out</a>
             </div>
+        </div>
+        <div id="gamesContainer">
+            <h2 class="oddHeading">Games</h2>
             <div id="projectContainer">
-                <p>"write a blurb here about doing this project. Concurrent validation rather than waiting until the 'submit' event to tell the user they missed something.</p>
-                <a href="https://shiverthetimbers.github.io/lights-out" target="_blank">Lights Out</a>
+                <h3>Lights Out!</h3>
+                <p>I first came across it in a text book as a fun example of what is possible with HTML, CSS, and JavaScript. I thought the game was neat and that it would be a fun challenge to try and recreate on my own.</p>
+                <p>There were a few times when I needed to reference other folks' completed code to get mine working, or to get going in the right direction, but I created as much of it on my own as possible. It would be fair to call this a 'guided' project, but I still learned a lot and wrote what I could without help.</p>
+                <p>The game still needs a move counter or a timer feature. Something to 'gamify' the project a little more. I saw one version that had an 'autosolve' button. I may add some features later.</p>
+                <p>It's a fun game, give it a try.</p>
+                <a href="https://shiverthetimbers.github.io/lights-out" target="_blank">Check it out</a>
             </div>
         </div>
     </main>

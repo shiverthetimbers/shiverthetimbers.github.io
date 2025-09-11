@@ -47,3 +47,79 @@ body {
     /* box-shadow: 0 0 15px snow inset, 0 0 30px snow, 0 0 45px snow; */
     text-shadow: 0 0 .5em snow, 0 0 .75em snow, 0 0 1em snow;
 }
+
+h2 {
+    color: black;
+    background-image: linear-gradient(to right, snow 30%, transparent 90%);
+    border-radius: 16px 0 0 16px;
+    padding-left: 16px;
+    /* text-shadow: 1px 0 black, -1px 0 black, 0 1px black, 0 -1px black; */
+    /* border: 2px solid green; */
+}
+
+.oddHeading {
+    text-align: end;
+    background-image: linear-gradient(to left, snow 30%, transparent 90%);
+    border-radius: 0 16px 16px 0;
+    padding-right: 16px;
+}
+
+h3 {
+    color:snow;
+    text-decoration: underline;
+    text-decoration-color: #BBA14F;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main a {
+    background-image: linear-gradient(#BBA14F, #e9d184, #BBA14F);
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 16px;
+    border: .125em solid snow;
+    border-radius: 16px;
+    box-shadow: 0 0 4px snow, 0 0 8px snow;
+    margin-left: 40%;
+
+    transition: box-shadow 400ms;
+}
+
+main a:hover {
+    box-shadow: 0 0 4px snow, 0 0 8px snow, 0 0 16px snow;
+}
+
+#basicsContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70vw;
+    padding: 2vw;
+}
+
+#gamesContainer {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70vw;
+    padding: 2vw;
+    margin-left: auto;
+}
+
+p {
+    color: snow;
+}
+
+#projectContainer {
+    /* border: 2px solid red; */
+    background-color: #00000099;
+    padding: 0 8px;
+    border-radius: 16px;
+    padding: 0 8px 24px 16px;
+}
