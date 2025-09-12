@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('/assets/img/background.png');
+    background-image: url('/assets/img/background.avif');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -81,7 +81,7 @@ main a {
     text-decoration: none;
     color: #000000;
     padding: 8px 16px;
-    border: .125em solid snow;
+    border: .0125em solid snow;
     border-radius: 16px;
     box-shadow: 0 0 4px snow, 0 0 8px snow;
     margin-left: 40%;
@@ -90,7 +90,7 @@ main a {
 }
 
 main a:hover {
-    box-shadow: 0 0 4px snow, 0 0 8px snow, 0 0 16px snow;
+    box-shadow: 0 0 1px snow, 0 0 4px snow, 0 0 8px snow, 0 0 16px snow;
 }
 
 #basicsContainer {
