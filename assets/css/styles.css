@@ -84,9 +84,11 @@ main a {
     border: .0125em solid snow;
     border-radius: 16px;
     box-shadow: 0 0 4px snow, 0 0 8px snow;
-    margin-left: 40%;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
 
-    transition: box-shadow 400ms;
+    transition: box-shadow 500ms;
 }
 
 main a:hover {
@@ -98,16 +100,15 @@ main a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70vw;
+    width: 60vw;
     padding: 2vw;
 }
 
 #gamesContainer {
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 70vw;
+    width: 60vw;
     padding: 2vw;
     margin-left: auto;
 }
