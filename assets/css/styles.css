@@ -2,13 +2,53 @@
     box-sizing: border-box;
 }
 
-body {
+body, html {
     margin: 0;
     padding: 0;
-    font-family: 'DM Sans', Arial, sans-serif;
-    background-image: url('/assets/img/background.avif');
+    width: 100%;
+}
+
+html {
+    min-height: 100%;
+    background-image: url('/assets/img/bg-sm.avif');
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 916px) {
+  html {
+    background-image: url('/assets/img/bg-md.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1201px) {
+  html {
+    background-image: url('/assets/img/bg-lg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1921px) {
+  html {
+    background-image: url('/assets/img/bg-xl.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+header {
+    width: 100%;
 }
 
 #navBar {
@@ -56,6 +96,10 @@ body {
     flex-wrap: wrap;
 }
 
+.home-main > * {
+    min-width: 0;
+}
+
 .img-container {
     /* border: 2px solid blue; */
     font-family: 'Permanent Marker', 'DM Sans', sans-serif;
@@ -63,10 +107,10 @@ body {
     flex-direction: column;
     align-items: center;
 
-    position: sticky;
-    top: 64px;
+    /* position: sticky;
+    top: 64px; */
     height: fit-content;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
 }
 
 .img-container h1 {
@@ -94,12 +138,20 @@ body {
 
 .about-container {
     height: fit-content;
-    max-width: 40%;
-    background-color: #00000099;
+    flex: 1 1 520px;
+    max-width: 500px;
+    background-color: #00000066;
     padding: 16px 32px;
     border-radius: 16px;
     border: 1px solid #e5e7eb33;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
+}
+
+@media (max-width: 1075px) {
+  .about-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
 
 .about-container p {
