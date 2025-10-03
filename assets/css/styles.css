@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
     background-image: url('/assets/img/background.avif');
     background-size: cover;
     background-attachment: fixed;
@@ -13,7 +13,7 @@ body {
 
 #navBar {
     background-color: black;
-    height: 3em;
+    height: 3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,6 +48,74 @@ body {
     text-shadow: 0 0 .5em snow, 0 0 .75em snow, 0 0 1em snow;
 }
 
+.home-main {
+    padding: 128px 32px;
+    min-height: 92vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.img-container {
+    border: 2px solid blue;
+    font-family: 'Permanent Marker', 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: sticky;
+    top: 64px;
+    height: fit-content;
+    flex: 0 0 auto;
+}
+
+.img-container h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    color: snow;
+    text-align: center;
+    /* border: 2px solid red; */
+}
+
+.img-container p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+    /* border: 2px solid red; */
+}
+
+.img-container img {
+    max-width: 300px;
+    border-radius: 64px;
+    border: 1px solid #e5e7eb33;
+    /* border: 2px solid red; */
+}
+
+.about-container {
+    height: fit-content;
+    max-width: 40%;
+    background-color: #00000099;
+    padding: 16px 32px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb33;
+    backdrop-filter: blur(2px);
+}
+
+.about-container p {
+    line-height: 1.625;
+    /* letter-spacing: .5px; */
+}
+
+.about-container a {
+    color: #BBA14F;
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    color: #e9d184;
+}
+
 h2 {
     color: black;
     background-image: linear-gradient(to right, snow 30%, transparent 90%);
@@ -71,12 +139,12 @@ h3 {
     text-align: center;
 }
 
-main {
+.projects-main {
     display: flex;
     flex-wrap: wrap;
 }
 
-main a {
+.projects-main a {
     background-image: linear-gradient(#BBA14F, #e9d184, #BBA14F);
     text-decoration: none;
     color: #000000;
@@ -91,7 +159,7 @@ main a {
     transition: box-shadow 500ms;
 }
 
-main a:hover {
+.project-main a:hover {
     box-shadow: 0 0 1px snow, 0 0 4px snow, 0 0 8px snow, 0 0 16px snow;
 }
 
@@ -122,6 +190,8 @@ p {
     background-color: #00000099;
     padding: 0 8px;
     border-radius: 16px;
+    border: 1px solid #e5e7eb33;
+    backdrop-filter: blur(2px);
     padding: 0 8px 24px 16px;
     margin-bottom: 16px;
 }
