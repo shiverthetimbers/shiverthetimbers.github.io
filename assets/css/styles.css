@@ -57,7 +57,7 @@ body {
 }
 
 .img-container {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     font-family: 'Permanent Marker', 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
