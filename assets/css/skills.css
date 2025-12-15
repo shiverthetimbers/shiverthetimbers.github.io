@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+    min-height: 100%;
+    background-image: url('/assets/img/bg-sm.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media (min-width: 916px) {
+  html {
+    background-image: url('/assets/img/bg-md.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1201px) {
+  html {
+    background-image: url('/assets/img/bg-lg.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 1921px) {
+  html {
+    background-image: url('/assets/img/bg-xl.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+body {
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+header {
+  width: 100%;
+}
+
+#navBar {
+  background-color: black;
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#navBar a {
+  text-decoration: none;
+  color: snow;
+  background-color: transparent;
+  padding: .25em 1em;
+  border-radius: .5em;
+
+  transition: box-shadow .3s, text-shadow .3s, border .3s;
+  position: relative;
+}
+
+#navBar a:hover:after {
+  content: attr(data-text);
+  display: block;
+  color: snow;
+  position: absolute;
+  top: 70%;
+
+  height: 25px;
+  width: 100%;
+  transform: scaleY(-1) perspective(2em) rotateX(-40deg) scale(1, .9);
+  filter: blur(.09em);
+}
+
+#navBar a:hover {
+  /* box-shadow: 0 0 15px snow inset, 0 0 30px snow, 0 0 45px snow; */
+  text-shadow: 0 0 .5em snow, 0 0 .75em snow, 0 0 1em snow;
+}
+
+h2 { 
+  border-bottom: thin solid #e9d184;
+}
+
+.resume { 
+  background-color: snow;
+  border: 1px solid #e9d184;
+  padding: 0 2vw;
+  width: 75%;
+  margin: 3vw auto;
+}
+
+.personalInfo { 
+  background:#e9d184;
+  color: black;
+  text-align: center;
+  padding: .3vw 0 1vw 0;
+  margin: 0 -2vw;
+}
+
+.download {
+  float: right;
+  background-color: #aaa;
+  border-radius: 4px;
+  margin-right: 4px;
+  border: none;
+}
+
+.download a {
+  color: black;
+  text-decoration: none;
+}
+
+[href$=".pdf"]::after {
+  content: url(../img/dnload.svg) / "download PDF";
+  color: black;
+}
+
+.educationDates, .employmentDates { 
+  float:right;
+}
