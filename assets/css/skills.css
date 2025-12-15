@@ -121,11 +121,10 @@ h2 {
   text-decoration: none;
 }
 
-[href$=".pdf"]::after {
-  content: url(../img/dnload.svg) / "download PDF";
-  color: black;
+.job-title {
+  font-weight: bold;
 }
 
-.educationDates, .employmentDates { 
+.education-dates, .employment-dates { 
   float:right;
 }

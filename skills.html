@@ -10,7 +10,7 @@
   <header>
     <nav id="navBar">
         <a data-text="" href="index.html">home</a>
-        <a data-text="skills" href="">skills</a>
+        <a data-text="skills" href="skills.html">skills</a>
         <a data-text="projects" href="projects.html">projects</a>
         <a data-text="contact" href="">contact</a>
     </nav>
@@ -19,7 +19,7 @@
     <div class="resume">
       <div class="personalInfo">
         <div class="download-container">
-          <a href="downloads/woodResume_2026.pdf">Download</a>
+          <a style="text-decoration: none; float: right;" href="downloads/woodResume_2026.pdf">Download PDF</a>
         </div>
           <h1>Dalton Wood</h1>
           <p><a href="tel:+16155595714">615.559.5714</a> | <a href="mailto:">wood.dalton27@gmail.com</a> | Nashville, TN | <a href="www.dalton-wood.dev" target="_blank">www.dalton-wood.dev</a></p>
@@ -29,36 +29,84 @@
           <h2>Technical Skills</h2>
           <p>
             <ul>
-              <li>Programming Languages</li>
-              <li>Operating Systems</li>
-              <li>Certifications</li>
-              <li>Web Design</li>
+              <li><span class="job-title">Languages:</span> Typescript, JavaScript, HTML, CSS</li>
+              <li><span class="job-title">Operating Systems:</span> Windows, Android, iOS, Linux</li>
+              <li><span class="job-title">Certifications:</span> Security+, Network+, A+, AWS Cloud Foundations, ITIL Foundations</li>
+              <li><span class="job-title">Web Design:</span> Angular v20, Angular Material</li>
             </ul>    
           </p>
         </div>
             <div class="education">
           <h2>Education</h2>
-          <p>Bachelor of Science: Software Engineering <span class="educationDates">Currently Enrolled</span><br>
+          <p><span class="job-title">Bachelor of Science: Software Engineering</span> <span class="education-dates">Currently Enrolled</span><br>
             Western Governors University | Salt Lake City, UT
           </p>
-          <p>Technical Diploma: Information Technology and Infrastructure Management <span class="educationDates">Dec. 2021</span><br>
+          <p><span class="job-title">Technical Diploma: Information Technology and Infrastructure Management</span> <span class="education-dates">Dec. 2021</span><br>
             Tennessee College of Applied Technology | Murfreesboro, TN
           </p>
         </div>
            
         <div class="experience">
-          <h2>Experience</h2>
-          <p>TRADELOT, Banker <span class="employmentDates">01/14 - Present</span></p>
-          <ul>
-            <li>Achieved 100% of sales goals each month, consistently 
-                ranking among top 10 performers within district</li>
-            <li>Recommend appropriate account services to customers based on financial situation 
-                and communicate benefits to achieve 15-20 new accounts per month</li>
-            <li>Assist bank customers with opening and closing accounts,
-                including issuing debit cards and personal checks</li>
-            <li>Resolved claims of fraudulent purchases on customer accounts 
-     and advised customers on increased security practices</li>
-          </ul>
+          <section>
+            <h2>Software Development Experience</h2>
+            <p><span class="job-title">Software Engineering Student</span>, Western Governors University <span class="employment-dates">May 2024 - Present</span></p>
+            <ul>
+              <li>Developed responsive Angular v20 web applications integrating Angular Material components for modular UI design</li>
+              <li>Building full-stack web applications using Google Firebase for role-based access controls and real-time data synchronization</li>
+              <li>Built JavaScript-based game and puzzle projects hosted via GitHub Pages</li>
+              <li>Applying software engineering principles to plan, design, and iterate projects using Agile workflows and Git-based version control</li>
+              <li>Studying optimized data structures and algorithms in Python to improve space and time efficiency</li>
+              <li>Authored clear technical documentation and practiced ethical software design</li>
+            </ul>
+          </section>
+          <section>
+            <h2>IT Administration Experience</h2>
+            <div>
+              <p><span class="job-title">System Administrator</span>, August Bioservices<span class="employment-dates">Jan 2023 - Mar 2024</span></p>
+              <ul>
+                <li>Lead the implementation of software-controlled laboratory instrumentation for pharmaceutical manufacturing</li>
+                <li>Coordinated instrument installation and validation by communicating with multiple department leaders and third-party vendors</li>
+                <li>Administered Cisco dominant Campus Area Network for pharmaceutical manufacturing equipment, scientific instrumentation, and other various endpoints</li>
+                <li>Customized and then deployed Windows images over the network to standardize and automate equipment preparation</li>
+                <li>Automated the employee onboarding process with available Microsoft tools (Forms, Power Automate, PowerShell)</li>
+              </ul>
+            </div>
+            <div>
+              <p><span class="job-title">Jr Network Administrator</span>, Wiser Consultants<span class="employment-dates"></span></p>
+              <ul>
+                <li>Configured and installed new network equipment (e.g., firewalls, switches, access points, cameras) for 3 locations</li>
+                <li>Edited routes and policies to ensure correct functionality of new equipment and services</li>
+                <li>Resolved 2-3 service tickets (remote and walk-up) daily and served as a point of escalation for support technicians</li>
+                <li>Monitored VPN configurations to ensure appropriate site-to-site WAN communication</li>
+                <li>Deployed software and configurations to 200+ virtual endpoints via Group Policy</li>
+              </ul>
+            </div>
+            <div>
+              <p><span class="job-title">Support Technician</span>, Legility <span class="employment-dates">June 2021 - June 2022</span></p>
+              <ul>
+                <li>Remotely diagnosed issues relating to network connectivity, share access, remote desktops, and hardware failure</li>
+                <li>Resolved 5-10 level 1 issues and gathered context for issues that needed escalation</li>
+                <li>Regularly managed hardware and software distribution for contractor onboarding for 200+ users</li>
+                <li>Performed basic datacenter tasks like toning ports, terminating CAT5E, and drive swaps</li>
+                <li>Created basic PowerShell scripts for Active Directory and O365 administration</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>Military Experience</h2>
+            <div>
+              <p><span class="job-title">Non-Commissioned Officer</span>, U.S. Army, Infantry <span class="employment-dates">2014 - 2019</span></p>
+              <ul>
+                <li>Provided leadership and guidance to at least twenty-five direct reports and peers while maintaining open and professional communication with supervisors</li>
+                <li>Performed background investigation and biometric screening of 30+ individuals in cooperation with intelligence personnel and interpreters</li>
+                <li>Maintained a network of informants to extract intelligence on attacks and intended targets, shifts in local climate, and suspected insider threats</li>
+                <li>Built and secured checkpoints at three different remote facilities during operations overseas</li>
+                <li>Conducted reconnaissance, surveillance, and long-range engagements while communicating detailed intelligence requirements to supervisors</li>
+                <li>Created, distributed, and presented manuals, visual aids, and other educational materials</li>
+                <li>Maintained, operated, and trained soldiers on more than 8 different weapon systems</li>
+                <li>Conducted daily personnel and vehicle searches to deter and apprehend unauthorized personnel or materials in sensitive operational environments</li>
+              </ul>
+          </section>
         </div>
       </div>
   </main>
