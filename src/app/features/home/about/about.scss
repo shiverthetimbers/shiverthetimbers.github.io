@@ -1,0 +1,39 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Manufacturing Consent', sans-serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-left: 5%;
+  margin-right: auto;
+
+  span {
+    font-size: 4rem;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 112%;
+    height: 4px;
+    background-color: #bdff40;
+    transform: skew(-40deg);
+
+    position: relative;
+    left: -8px;
+    top: -8px;
+  }
+}
+
+.about-section {
+  background-color: #242424;
+  // text-align: center;
+  top: -64vh;
+  width: fit-content;
+  padding: 8px 8px;
+  margin: auto;
+}
