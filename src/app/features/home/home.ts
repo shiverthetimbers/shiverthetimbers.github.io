@@ -4,42 +4,60 @@ import { About } from './about/about';
 import { Gallery } from './gallery/gallery';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Experience } from './experience/experience';
+import { Contact } from './contact/contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, About, Gallery],
+  imports: [Hero, About, Gallery, Experience, Contact],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home implements AfterViewInit {
-  @ViewChild('horizontalContainer') horizontalContainer!: ElementRef;
+  @ViewChild('homeContainer') homeContainer!: ElementRef;
 
   ngAfterViewInit(): void {
-    const container = this.horizontalContainer.nativeElement as HTMLElement;
-    const hScrollArray = gsap.utils.toArray(container.children) as HTMLElement[];
-    const firstElem = hScrollArray[0];
-    console.log(hScrollArray);
+    const container = this.homeContainer.nativeElement as HTMLElement;
+    const homeEls = gsap.utils.toArray(container.children) as HTMLElement[];
 
-    gsap.to(hScrollArray, {
-      xPercent: -100 * (hScrollArray.length - 1),
-      ease: 'none',
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
-        start: 'top top',
-        end: () => `+=${container.offsetWidth}`,
+        start: 'top 50%',
+        end: 'top 25%',
         scrub: 1,
-        pin: true,
         markers: false,
       },
     });
-    gsap.to(firstElem, {
+
+    tl.to(homeEls[0], {
       opacity: 1,
       scrollTrigger: {
         trigger: container,
-        start: 'top 64%',
-        end: 'top 50%',
+        start: 'top 50%',
+        end: 'top 25%',
+        scrub: 1,
+        markers: false,
+      },
+    });
+    tl.to(homeEls[2], {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: homeEls[2],
+        start: 'top 50%',
+        end: 'top 25%',
+        scrub: 1,
+        markers: false,
+      },
+    });
+    tl.to(homeEls[3], {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: homeEls[3],
+        start: 'top 50%',
+        end: 'top 25%',
         scrub: 1,
         markers: false,
       },

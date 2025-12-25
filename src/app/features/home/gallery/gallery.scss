@@ -1,9 +1,23 @@
 .gallery-container {
-  border: 2px solid red;
   padding-top: 8vh;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 img {
   filter: grayscale(90%);
+}
+
+#img1 {
+  margin-right: auto;
+}
+
+#img2 {
+  margin: auto;
+}
+
+#img3 {
+  margin-left: auto;
 }
