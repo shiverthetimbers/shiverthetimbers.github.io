@@ -10,7 +10,7 @@
   align-items: center;
   width: 100%;
   height: 100dvh;
-  overflow-x: hidden;
+  overflow: hidden;
 
   --before-x: 0;
 
@@ -52,7 +52,7 @@
     font-weight: normal;
     font-style: italic;
     font-size: 27vw;
-    line-height: 0.87;
+    line-height: 0.75;
 
     margin: 0;
   }

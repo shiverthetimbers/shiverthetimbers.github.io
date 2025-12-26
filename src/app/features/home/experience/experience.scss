@@ -31,9 +31,29 @@ h2 {
 
 .exp-section {
   background-color: #242424;
-  // text-align: center;
   font-size: 1.2rem;
   top: -64vh;
   width: fit-content;
   padding: 8px 24px;
+
+  a {
+    text-decoration: none;
+    color: #bdff40;
+
+    transition: all 400ms;
+
+    .svg-icon {
+      fill: #bdff40;
+
+      transition: all 800ms;
+    }
+  }
+
+  a:hover {
+    color: red;
+
+    .svg-icon {
+      fill: red;
+    }
+  }
 }
