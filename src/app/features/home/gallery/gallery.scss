@@ -3,21 +3,9 @@
   height: 100vh;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 img {
   filter: grayscale(90%);
-}
-
-#img1 {
-  margin-right: auto;
-}
-
-#img2 {
-  margin: auto;
-}
-
-#img3 {
-  margin-left: auto;
 }
