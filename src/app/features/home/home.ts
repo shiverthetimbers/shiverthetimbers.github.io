@@ -28,18 +28,16 @@ export class Home implements AfterViewInit {
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,
-        markers: false,
       },
     });
 
     tl.to(homeEls[0], {
       opacity: 1,
       scrollTrigger: {
-        trigger: container,
+        trigger: homeEls[0],
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,
-        markers: false,
       },
     });
     tl.to(homeEls[2], {
@@ -49,7 +47,6 @@ export class Home implements AfterViewInit {
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,
-        markers: false,
       },
     });
     tl.to(homeEls[3], {
@@ -59,7 +56,6 @@ export class Home implements AfterViewInit {
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,
-        markers: false,
       },
     });
   }

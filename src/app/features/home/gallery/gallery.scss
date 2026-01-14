@@ -6,6 +6,15 @@
   align-items: center;
 }
 
+.gallery-frame:first-child {
+  margin-left: 2vw;
+}
+
+.gallery-frame {
+  border: 2px solid red;
+  margin-right: 50px;
+}
+
 img {
   filter: grayscale(90%);
 }

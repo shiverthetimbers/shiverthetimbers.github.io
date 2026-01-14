@@ -38,3 +38,67 @@ h2 {
   width: fit-content;
   padding: 8px 24px;
 }
+
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+  background-color: #414141;
+  border-color: #55731d;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+}
+
+label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+}
+
+.submit {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background-color: #1d1d1d;
+  padding: 0.5rem 2rem;
+  margin: 2rem auto;
+  border: none;
+}
+
+.btn-text {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  display: block;
+  position: relative;
+}
+
+.btn-text::before {
+  content: '';
+
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: 1px;
+  background: #bdff40;
+  top: 100%;
+  left: -1rem;
+  pointer-events: none;
+
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.4s;
+}
+
+.submit:hover .btn-text::before {
+  transform-origin: 50% 100%;
+  transform: scale3d(1, 1, 1);
+}

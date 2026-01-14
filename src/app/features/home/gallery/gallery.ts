@@ -2,8 +2,9 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 @Component({
   selector: 'app-gallery',
@@ -16,9 +17,17 @@ export class Gallery implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const container = this.galleryContainer.nativeElement as HTMLElement;
+    const scrollWidth = container.scrollWidth - window.innerWidth;
+
+    // ScrollSmoother.create({
+    //   content: container,
+    //   smooth: 1.3,
+    //   effects: true,
+    //   smoothTouch: 0.2,
+    // });
 
     gsap.to(container, {
-      xPercent: -560,
+      x: -scrollWidth - 50,
       ease: 'none',
       scrollTrigger: {
         trigger: container,
