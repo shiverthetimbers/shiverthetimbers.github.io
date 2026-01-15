@@ -1,19 +1,36 @@
 .gallery-container {
-  padding-top: 8vh;
-  height: 100vh;
-
+  // border: yellow 2px solid;
+  height: 100dvh;
+  width: 100%;
   display: flex;
-  align-items: center;
-}
-
-.gallery-frame:first-child {
-  margin-left: 2vw;
+  gap: 8rem;
 }
 
 .gallery-frame {
-  margin-right: 50px;
+  // border: 2px solid red;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  align-content: start;
+  flex-shrink: 0;
+
+  h3 {
+    font-size: 3rem;
+    font-weight: 400;
+
+    span {
+      background-color: #bdff40;
+      padding: 0 1rem;
+      color: #060606;
+    }
+  }
 }
 
 img {
   filter: grayscale(90%);
+  display: block;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: calc(50% - height/2);
 }

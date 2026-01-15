@@ -4,10 +4,11 @@ import { About } from './about/about';
 import { Gallery } from './gallery/gallery';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { Experience } from './experience/experience';
 import { Contact } from './contact/contact';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,13 @@ export class Home implements AfterViewInit {
   ngAfterViewInit(): void {
     const container = this.homeContainer.nativeElement as HTMLElement;
     const homeEls = gsap.utils.toArray(container.children) as HTMLElement[];
+
+    // ScrollSmoother.create({
+    //   content: container,
+    //   smooth: 1.3,
+    //   effects: true,
+    //   smoothTouch: 0.2,
+    // });
 
     const tl = gsap.timeline({
       scrollTrigger: {
