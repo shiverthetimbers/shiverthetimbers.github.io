@@ -44,12 +44,28 @@ textarea {
   font: inherit;
   color: inherit;
   background-color: #414141;
-  border-color: #55731d;
+  border: 0 solid #55731d;
 }
 
 form {
   display: grid;
   gap: 1rem;
+}
+
+.error {
+  visibility: hidden;
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) ~ .error,
+textarea:invalid:not(:focus):not(:placeholder-shown) ~ .error {
+  visibility: visible;
+}
+
+input:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+  box-shadow: inset 0 0 0 1px #c0392b;
 }
 
 .form-group {
@@ -70,10 +86,16 @@ input {
   font: inherit;
   color: inherit;
   cursor: pointer;
-  background-color: #1d1d1d;
+  background-color: #bdff40;
+  color: #060606;
   padding: 0.5rem 2rem;
   margin: 2rem auto;
   border: none;
+}
+
+form:invalid .submit {
+  background-color: #414141;
+  cursor: not-allowed;
 }
 
 .btn-text {
@@ -83,14 +105,18 @@ input {
   position: relative;
 }
 
+form:invalid .btn-text:before {
+  content: none;
+}
+
 .btn-text::before {
   content: '';
 
   position: absolute;
   width: calc(100% + 2rem);
   height: 1px;
-  background: #bdff40;
-  top: 100%;
+  background: #060606;
+  top: 90%;
   left: -1rem;
   pointer-events: none;
 

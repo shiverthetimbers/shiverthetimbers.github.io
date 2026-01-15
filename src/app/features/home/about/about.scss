@@ -37,4 +37,19 @@ h2 {
   top: -64vh;
   width: fit-content;
   padding: 8px 24px;
+
+  span {
+    background-color: #bdff40;
+    color: #060606;
+    padding: 0 0.2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #bdff40;
+  }
+
+  a:hover {
+    color: red;
+  }
 }
