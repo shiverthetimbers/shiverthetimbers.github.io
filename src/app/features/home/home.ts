@@ -7,12 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { Experience } from './experience/experience';
 import { Contact } from './contact/contact';
+import { SideNav } from './side-nav/side-nav';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 @Component({
   selector: 'app-home',
-  imports: [Hero, About, Gallery, Experience, Contact],
+  imports: [Hero, About, Gallery, Experience, Contact, SideNav],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -23,13 +24,6 @@ export class Home implements AfterViewInit {
     const container = this.homeContainer.nativeElement as HTMLElement;
     const homeEls = gsap.utils.toArray(container.children) as HTMLElement[];
 
-    // ScrollSmoother.create({
-    //   content: container,
-    //   smooth: 1.3,
-    //   effects: true,
-    //   smoothTouch: 0.2,
-    // });
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
@@ -39,10 +33,19 @@ export class Home implements AfterViewInit {
       },
     });
 
+    tl.to(homeEls[1], {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: homeEls[1],
+        start: 'top 50%',
+        end: 'top 25%',
+        scrub: 1,
+      },
+    });
     tl.to(homeEls[0], {
       opacity: 1,
       scrollTrigger: {
-        trigger: homeEls[0],
+        trigger: homeEls[1],
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,
@@ -61,6 +64,15 @@ export class Home implements AfterViewInit {
       opacity: 1,
       scrollTrigger: {
         trigger: homeEls[3],
+        start: 'top 50%',
+        end: 'top 25%',
+        scrub: 1,
+      },
+    });
+    tl.to(homeEls[4], {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: homeEls[4],
         start: 'top 50%',
         end: 'top 25%',
         scrub: 1,

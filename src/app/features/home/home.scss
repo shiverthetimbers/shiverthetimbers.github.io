@@ -1,11 +1,16 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
   position: relative;
   top: -64dvh;
 
   padding: 0 4%;
+}
+
+#navApp {
+  display: none;
+  max-height: 0;
+  opacity: 0;
 }
 
 #aboutApp {
@@ -23,4 +28,28 @@
   top: -25dvh;
   opacity: 0;
   margin-bottom: 10vh;
+}
+
+@media (min-width: 900px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  }
+
+  #navApp {
+    display: block;
+    grid-column: 1;
+    grid-row: 1/-1;
+    height: 100dvh;
+    position: fixed;
+    top: 25dvh;
+    align-self: start;
+  }
+
+  #aboutApp,
+  #galleryApp,
+  #expApp,
+  #contactApp {
+    grid-column: 2;
+  }
 }

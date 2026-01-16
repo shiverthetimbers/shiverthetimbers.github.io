@@ -1,0 +1,15 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  a {
+    font-size: 1.25rem;
+    border: 2px solid #bdff40;
+    border-radius: 2.5rem;
+    padding: 0.5rem 1rem 0.5rem 4rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: end;
+  }
+}

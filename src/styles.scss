@@ -9,6 +9,7 @@ html {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,4 +18,5 @@ body {
   background-color: #060606;
   color: #fff;
   line-height: 1.2;
+  overflow-x: hidden;
 }
