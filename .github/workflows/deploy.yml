@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
-      - run: npm run build -- --configuration=production --base-href /new-portfolio/ --deploy-url /new-portfolio/
+      - run: npm run build -- --configuration=production --base-href / --deploy-url /
       - name: Create 404.html
         run: |
           APP_DIR=$(ls dist)
