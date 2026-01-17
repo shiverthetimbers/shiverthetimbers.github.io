@@ -28,9 +28,9 @@
 
 img {
   filter: grayscale(90%);
-  display: block;
-  max-width: 100%;
+  width: clamp(280px, 70vw, 700px);
   height: auto;
+  display: block;
   position: absolute;
   top: calc(50% - height/2);
 }

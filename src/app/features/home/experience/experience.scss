@@ -1,7 +1,8 @@
 .exp-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
+  max-width: 1200px;
 }
 
 h2 {
@@ -36,6 +37,48 @@ h2 {
   top: -64vh;
   width: fit-content;
   padding: 8px 24px;
+
+  .project {
+    max-width: 500px;
+    h3 {
+      display: inline-block;
+      padding: 0 0.25rem;
+      margin-bottom: 0.25rem;
+      background-color: #bdff40;
+      color: #060606;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    a {
+      display: flex;
+      justify-content: end;
+      padding-right: 3rem;
+    }
+
+    svg {
+      display: inline-block;
+    }
+
+    a:hover svg {
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(4px, -4px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  }
 
   a {
     text-decoration: none;

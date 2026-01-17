@@ -1,6 +1,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   top: -64dvh;
 
@@ -19,37 +20,31 @@
 }
 #expApp {
   position: relative;
-  top: -25dvh;
+  top: -5dvh;
   opacity: 0;
   margin-bottom: 10vh;
 }
 #contactApp {
   position: relative;
-  top: -25dvh;
+  top: -5dvh;
   opacity: 0;
   margin-bottom: 10vh;
 }
 
 @media (min-width: 900px) {
   .home-container {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    padding-left: clamp(240px, 25vw, 320px);
   }
 
   #navApp {
     display: block;
-    grid-column: 1;
-    grid-row: 1/-1;
-    height: 100dvh;
     position: fixed;
-    top: 25dvh;
-    align-self: start;
-  }
-
-  #aboutApp,
-  #galleryApp,
-  #expApp,
-  #contactApp {
-    grid-column: 2;
+    left: 4%;
+    top: 25%;
+    transform: translateY(-25%);
+    height: auto;
+    max-height: 80vh;
+    overflow: visible;
+    z-index: 10;
   }
 }

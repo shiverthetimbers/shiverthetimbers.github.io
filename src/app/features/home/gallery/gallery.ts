@@ -28,7 +28,7 @@ export class Gallery implements AfterViewInit {
         start: 'top top',
         end: () => `+=${scrollDistance}`,
         pin: true,
-        scrub: 0,
+        scrub: 1,
         snap: { snapTo: 1 / (galleryEls.length - 1), delay: 0 },
         invalidateOnRefresh: true,
         markers: false,
