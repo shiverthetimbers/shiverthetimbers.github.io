@@ -10,8 +10,8 @@
   // border: 2px solid red;
   width: 100%;
   display: grid;
+  grid-template-rows: auto 1fr;
   place-items: center;
-  align-content: start;
   flex-shrink: 0;
 
   h3 {
@@ -31,6 +31,4 @@ img {
   width: clamp(280px, 70vw, 700px);
   height: auto;
   display: block;
-  position: absolute;
-  top: calc(50% - height/2);
 }
