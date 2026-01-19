@@ -17,9 +17,69 @@ export class Gallery implements AfterViewInit {
   ngAfterViewInit(): void {
     const container = this.galleryContainer.nativeElement as HTMLElement;
     const galleryEls = gsap.utils.toArray(container.children) as HTMLElement[];
-    const scrollDistance = container.scrollWidth - container.clientWidth;
-    const viewportCenter = () => window.innerWidth / 2;
-    let direction = 1;
+
+    const getScrollDistance = () => {
+      const frameWidth = galleryEls[0].offsetWidth;
+      return frameWidth * (galleryEls.length - 1);
+    };
+
+    let scrollDistance = getScrollDistance();
+
+    ScrollTrigger.addEventListener('refreshInit', () => {
+      scrollDistance = getScrollDistance();
+    });
+
+    const updateFrames = () => {
+      const deadZone = 50; // px around center with no skew
+      const maxSkew = 10; // degrees at edges
+      const minScaleX = 0.95; // horizontal compression at edges
+      const maxDistance = window.innerWidth / 2;
+
+      galleryEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.left + rect.width / 2;
+        const distanceFromCenter = elCenter - window.innerWidth / 2;
+
+        // --- normalized distance outside dead zone ---
+        let edgeSkew = 0;
+        let normalized = 0;
+
+        if (Math.abs(distanceFromCenter) > deadZone) {
+          normalized = (Math.abs(distanceFromCenter) - deadZone) / (maxDistance - deadZone);
+          normalized = gsap.utils.clamp(0, 1, normalized);
+
+          edgeSkew = normalized * maxSkew;
+          if (distanceFromCenter < 0) edgeSkew = -edgeSkew;
+        }
+
+        // --- scaleX compression toward edges ---
+        const scaleX = 1 - normalized * (1 - minScaleX);
+
+        // --- transform origin pivoting at outside edge ---
+        const originX = distanceFromCenter < 0 ? 'right center' : 'left center';
+
+        // --- optional opacity / vertical scale ---
+        const progress = gsap.utils.clamp(0, 1, Math.abs(distanceFromCenter) / maxDistance);
+        const opacity = gsap.utils.clamp(
+          0,
+          1,
+          1 - Math.max(0, Math.abs(distanceFromCenter) - 150) / maxDistance,
+        );
+        const scale = gsap.utils.interpolate(1, 0.97, progress);
+
+        // --- apply transforms smoothly with catch-up ---
+        gsap.to(el, {
+          skewY: edgeSkew,
+          scaleX,
+          transformOrigin: originX,
+          opacity,
+          scale,
+          duration: 0.2,
+          overwrite: 'auto', // prevents stuck skew on fast scroll
+          ease: 'power1.out',
+        });
+      });
+    };
 
     gsap.to(container, {
       x: () => -scrollDistance,
@@ -29,28 +89,10 @@ export class Gallery implements AfterViewInit {
         start: 'top top',
         end: () => `+=${scrollDistance}`,
         pin: true,
-        scrub: 0.2,
+        scrub: 0.8,
         invalidateOnRefresh: true,
         markers: false,
-        onUpdate: (self) => {
-          direction = self.direction;
-          galleryEls.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            const elCenter = rect.left + rect.width / 2;
-
-            const distance = Math.abs(viewportCenter() - elCenter);
-            const absDistance = Math.abs(distance);
-            const maxDistance = viewportCenter();
-
-            const progress = gsap.utils.clamp(0, 1, absDistance / maxDistance);
-            const opacity = gsap.utils.clamp(0, 1, 1 - Math.max(0, distance - 150) / maxDistance);
-
-            const scale = gsap.utils.interpolate(1, 0.97, progress);
-            const skewY = gsap.utils.interpolate(0, direction * 2, progress);
-
-            gsap.set(el, { opacity, skewY, scale });
-          });
-        },
+        onUpdate: updateFrames,
       },
     });
   }
