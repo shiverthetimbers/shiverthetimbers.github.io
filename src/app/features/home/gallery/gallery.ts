@@ -19,6 +19,7 @@ export class Gallery implements AfterViewInit {
     const galleryEls = gsap.utils.toArray(container.children) as HTMLElement[];
     const scrollDistance = container.scrollWidth - container.clientWidth;
     const viewportCenter = () => window.innerWidth / 2;
+    let direction = 1;
 
     gsap.to(container, {
       x: () => -scrollDistance,
@@ -28,21 +29,27 @@ export class Gallery implements AfterViewInit {
         start: 'top top',
         end: () => `+=${scrollDistance}`,
         pin: true,
-        scrub: 1,
-        snap: { snapTo: 1 / (galleryEls.length - 1), delay: 0 },
+        scrub: 0.2,
+        snap: { snapTo: 1 / (galleryEls.length - 1), delay: 0, duration: { min: 1, max: 1.5 } },
         invalidateOnRefresh: true,
         markers: false,
-        onUpdate: () => {
+        onUpdate: (self) => {
+          direction = self.direction;
           galleryEls.forEach((el) => {
             const rect = el.getBoundingClientRect();
             const elCenter = rect.left + rect.width / 2;
 
             const distance = Math.abs(viewportCenter() - elCenter);
+            const absDistance = Math.abs(distance);
             const maxDistance = viewportCenter();
 
+            const progress = gsap.utils.clamp(0, 1, absDistance / maxDistance);
             const opacity = gsap.utils.clamp(0, 1, 1 - Math.max(0, distance - 150) / maxDistance);
 
-            gsap.set(el, { opacity });
+            const scale = gsap.utils.interpolate(1, 0.97, progress);
+            const skewY = gsap.utils.interpolate(0, direction * 2, progress);
+
+            gsap.set(el, { opacity, skewY, scale });
           });
         },
       },

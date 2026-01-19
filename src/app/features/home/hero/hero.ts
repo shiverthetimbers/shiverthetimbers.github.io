@@ -22,7 +22,7 @@ export class Hero implements AfterViewInit {
         start: 'top top',
         end: '+=1500',
         pin: true,
-        scrub: 2,
+        scrub: 1.2,
         markers: false,
       },
     });
@@ -37,7 +37,7 @@ export class Hero implements AfterViewInit {
         '--before-x': '10',
         duration: 0,
       },
-      '>'
+      '>',
     );
     tl.to(
       c('.first-name'),
@@ -47,17 +47,15 @@ export class Hero implements AfterViewInit {
         // justifyContent: 'center',
         duration: 2,
       },
-      '<'
+      '<',
     );
     tl.to(
       c('.last-name'),
       {
-        // xPercent: 90,
         paddingLeft: '120%',
-        // justifyContent: 'center',
         duration: 2,
       },
-      '<'
+      '<',
     );
     tl.to(
       container,
@@ -65,7 +63,7 @@ export class Hero implements AfterViewInit {
         '--before-x': '0',
         duration: 0.75,
       },
-      '-=1'
+      '-=1',
     );
   }
 }

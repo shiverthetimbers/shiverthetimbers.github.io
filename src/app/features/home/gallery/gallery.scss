@@ -14,6 +14,9 @@
   place-items: center;
   flex-shrink: 0;
 
+  transform-origin: center center;
+  will-change: transform;
+
   h3 {
     padding-top: 10vh;
     font-size: 3rem;
