@@ -47,8 +47,8 @@
 }
 
 .square-prism {
-  position: absolute;
-  height: 50dvh;
+  position: relative;
+  height: 100dvh;
 
   /* keeps the prism in view during the 45deg -> 0deg rotation */
   width: min(60vw, 520px);
