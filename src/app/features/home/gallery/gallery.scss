@@ -30,6 +30,10 @@
   }
 }
 
+.gallery-frame:last-of-type(1) {
+  margin-right: 500px;
+}
+
 img {
   filter: grayscale(90%);
   width: clamp(280px, 70vw, 700px);
