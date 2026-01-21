@@ -88,20 +88,40 @@
 /* gradient differs by face*/
 .prism1 .face0 {
   --a: 210deg;
-  background: linear-gradient(var(--a), rgba(6, 6, 6, 1), rgba(36, 36, 36, var(--g)));
+  background: linear-gradient(
+    var(--a),
+    rgba(6, 6, 6, 1) 0%,
+    rgba(6, 6, 6, 1) 65%,
+    rgba(36, 36, 36, var(--g))
+  );
 }
 .prism1 .face3 {
   --a: 150deg;
-  background: linear-gradient(var(--a), rgba(6, 6, 6, 1), rgba(36, 36, 36, var(--g)));
+  background: linear-gradient(
+    var(--a),
+    rgba(6, 6, 6, 1) 0%,
+    rgba(6, 6, 6, 1) 65%,
+    rgba(36, 36, 36, var(--g))
+  );
 }
 
 .prism2 .face0 {
   --a: 30deg;
-  background: linear-gradient(var(--a), rgba(6, 6, 6, 1), rgba(36, 36, 36, var(--g)));
+  background: linear-gradient(
+    var(--a),
+    rgba(6, 6, 6, 1) 0%,
+    rgba(6, 6, 6, 1) 65%,
+    rgba(36, 36, 36, var(--g))
+  );
 }
 .prism2 .face1 {
   --a: 330deg;
-  background: linear-gradient(var(--a), rgba(6, 6, 6, 1), rgba(36, 36, 36, var(--g)));
+  background: linear-gradient(
+    var(--a),
+    rgba(6, 6, 6, 1) 0%,
+    rgba(6, 6, 6, 1) 65%,
+    rgba(36, 36, 36, var(--g))
+  );
 }
 
 /* Text layout */
